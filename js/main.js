@@ -17,12 +17,14 @@ window.onload = function() {
     
     var highway;
     var player;
+    var taxi;
     var cursors;
 
     function preload() {
         // Load background image
         game.load.image( 'road', 'assets/3lanehighway.png' );
         game.load.image( 'car', 'assets/Car.png');
+        game.load.image( 'taxi', 'assets/taxi.png');
     }
     
     function create() {
@@ -30,15 +32,19 @@ window.onload = function() {
 	// Create the highway
         highway = game.add.tileSprite( 0, 0, 300, 800, 'road');
         player = game.add.sprite(100, 500, 'car');
-        //player.scale.set(0.5, 0.5);
+        taxi = game.add.sprite(100, 0, 'taxi');
+        
         player.anchor.setTo(0.5, 0.5);
         game.physics.arcade.enable(player);
+        game.physics.arcade.enable(taxi);
+        
         cursors = game.input.keyboard.createCursorKeys();
     }
     
     function update() {
         // Scrolling Highway
 	highway.tilePosition.y += 10;
+	taxi.tilePosition.y += 15;
 	
 	player.body.velocity.setTo(0,0);
 	
