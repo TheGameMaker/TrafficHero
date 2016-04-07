@@ -26,13 +26,13 @@ window.onload = function() {
     }
     
     function create() {
-    	game.physics.startSystem(Phaser.Physics.ARCADE);
+    	//game.physics.startSystem(Phaser.Physics.ARCADE);
 	// Create the highway
         highway = game.add.tileSprite( 0, 0, 300, 800, 'road');
         player = game.add.Sprite(256, 256, 'car');
         //player.scale.set(0.5, 0.5);
-        player.anchor.setTo(0.5, 0.5);
-        game.physics.enable(player, Phaser.Physics.ARCADE);
+       // player.anchor.setTo(0.5, 0.5);
+        //game.physics.enable(player, Phaser.Physics.ARCADE);
         cursors = game.input.keyboard.createCursorKeys();
     }
     
