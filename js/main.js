@@ -29,24 +29,24 @@ window.onload = function() {
     	//game.physics.startSystem(Phaser.Physics.ARCADE);
 	// Create the highway
         highway = game.add.tileSprite( 0, 0, 300, 800, 'road');
-        //player = game.add.Sprite(256, 256, 'car');
+        player = game.add.Sprite(256, 256, 'car');
         //player.scale.set(0.5, 0.5);
        // player.anchor.setTo(0.5, 0.5);
         //game.physics.enable(player, Phaser.Physics.ARCADE);
-        cursors = game.input.keyboard.createCursorKeys();
+        //cursors = game.input.keyboard.createCursorKeys();
     }
     
     function update() {
         // Scrolling Highway
 	highway.tilePosition.y += 2;
 	
-	player.body.velocity.setTo(0,0);
+	//player.body.velocity.setTo(0,0);
 	
-	if(cursors.left.isDown) {
-		player.body.velocity.x = -50;
-	}
-	else if(cursors.right.isDown) {
-		player.body.velocity.x = 50;
-	}
+	//if(cursors.left.isDown) {
+	//	player.body.velocity.x = -50;
+	//}
+	//else if(cursors.right.isDown) {
+	//	player.body.velocity.x = 50;
+	//}
     }
 };
