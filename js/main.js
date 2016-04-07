@@ -16,19 +16,36 @@ window.onload = function() {
     var game = new Phaser.Game( 300, 800, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     var highway;
+    var player;
+    var cursors;
 
     function preload() {
         // Load background image
         game.load.image( 'road', 'assets/3lanehighway.png' );
+        game.load.image( 'car', 'assets/Car.png');
     }
     
     function create() {
+    	game.physics.startSystem(Phaser.Physics.ARCADE);
 	// Create the highway
         highway = game.add.tileSprite( 0, 0, 300, 800, 'road');
+        player = game.add.Sprite(150, 650, 'car');
+        player.scale.set(0.5, 0.5);
+        player.anchor.setTo(0.5, 0.5);
+        game.physics.enable(player, Phaser.Physics.ARCADE);
+        cursors = game.input.keyboard.createCursorKeys();
     }
     
     function update() {
         // Scrolling Highway
 	highway.tilePosition.y += 2;
+	
+	player.body.velocity.setTo(0,0);
+	if(cursors.left.isDown) {
+		player.body.velocity.x = -50;
+	}
+	if(cursors.right.isDown) {
+		player.body.velocity.x = 50;
+	}
     }
 };
