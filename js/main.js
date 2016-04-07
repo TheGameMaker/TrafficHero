@@ -54,5 +54,8 @@ window.onload = function() {
 	else if(cursors.down.isDown) {
 		player.body.velocity.y += 80;
 	}
+	else {
+		player.body.velocity.y += 10;
+	}
     }
 };
