@@ -49,7 +49,7 @@ window.onload = function() {
 		player.body.velocity.x += 80;
 	}
 	else if(cursors.up.isDown) {
-		player.body.velocity.y += 80;
+		player.body.velocity.y -= 80;
 	}
 	else if(cursors.down.isDown) {
 		player.body.velocity.y += 80;
