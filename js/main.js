@@ -38,15 +38,21 @@ window.onload = function() {
     
     function update() {
         // Scrolling Highway
-	highway.tilePosition.y += 25;
+	highway.tilePosition.y += 10;
 	
 	player.body.velocity.setTo(0,0);
 	
 	if(cursors.left.isDown) {
-		player.body.velocity.x -= 65;
+		player.body.velocity.x -= 80;
 	}
 	else if(cursors.right.isDown) {
-		player.body.velocity.x += 65;
+		player.body.velocity.x += 80;
+	}
+	else if(cursors.up.isDown) {
+		player.body.velocity.y += 80;
+	}
+	else if(cursors.down.isDown) {
+		player.body.velocity.y += 80;
 	}
     }
 };
