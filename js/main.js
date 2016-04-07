@@ -44,7 +44,7 @@ window.onload = function() {
     function update() {
         // Scrolling Highway
 	highway.tilePosition.y += 10;
-	taxi.body.velocity.y += 15;
+	taxi.body.velocity.y += 2;
 	
 	player.body.velocity.setTo(0,0);
 	
