@@ -31,8 +31,8 @@ window.onload = function() {
         highway = game.add.tileSprite( 0, 0, 300, 800, 'road');
         player = game.add.sprite(100, 500, 'car');
         //player.scale.set(0.5, 0.5);
-       // player.anchor.setTo(0.5, 0.5);
-        game.physics.enable(player, Phaser.Physics.ARCADE);
+        player.anchor.setTo(0.5, 0.5);
+        game.physics.arcade.enable(player);
         cursors = game.input.keyboard.createCursorKeys();
     }
     
@@ -40,13 +40,13 @@ window.onload = function() {
         // Scrolling Highway
 	highway.tilePosition.y += 2;
 	
-	//player.body.velocity.setTo(0,0);
+	player.body.velocity.setTo(0,0);
 	
 	if(cursors.left.isDown) {
-		player.body.velocity.x = -50;
+		player.body.velocity.x -= 50;
 	}
 	else if(cursors.right.isDown) {
-		player.body.velocity.x = 50;
+		player.body.velocity.x += 50;
 	}
     }
 };
