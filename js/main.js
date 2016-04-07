@@ -29,7 +29,7 @@ window.onload = function() {
     	//game.physics.startSystem(Phaser.Physics.ARCADE);
 	// Create the highway
         highway = game.add.tileSprite( 0, 0, 300, 800, 'road');
-        player = game.add.sprite(0, 600, 'car');
+        player = game.add.sprite(100, 500, 'car');
         //player.scale.set(0.5, 0.5);
        // player.anchor.setTo(0.5, 0.5);
         //game.physics.enable(player, Phaser.Physics.ARCADE);
