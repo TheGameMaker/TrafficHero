@@ -31,8 +31,8 @@ window.onload = function() {
     	game.physics.startSystem(Phaser.Physics.ARCADE);
 	// Create the highway
         highway = game.add.tileSprite( 0, 0, 300, 800, 'road');
-        player = game.add.sprite(100, 600, 'car');
-        taxi = game.add.sprite(50, 0, 'taxi');
+        player = game.add.sprite(100, 650, 'car');
+        taxi = game.add.sprite(0, 0, 'taxi');
         
         player.anchor.setTo(0.5, 0.5);
         game.physics.arcade.enable(player);
